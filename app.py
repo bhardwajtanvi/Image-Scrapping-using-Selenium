@@ -28,10 +28,8 @@ def display():
             print(type(nums))
             search_and_download(search_term=name, driver_path=DRIVER_PATH,number_images=nums) # method to download images
             makezip()
-            return render_template("result.html",number=nums)
-        else:
-            return render_template("home.html")
-
+            return render_template("result.html")
+        
 
 if __name__ == "__main__":
     app.run(debug=False)
