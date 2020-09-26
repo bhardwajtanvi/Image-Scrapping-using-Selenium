@@ -4,8 +4,6 @@ import time
 import requests
 from selenium import webdriver
 import shutil
-GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
-CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
 chrome_options = webdriver.ChromeOptions()
 
 chrome_options.binary_location= os.environ.get("GOOGLE_CHROME_BIN")
