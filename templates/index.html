@@ -1,0 +1,75 @@
+{% extends "layout.html" %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/static/main.css" />
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <div class="container">
+      <div class="pt-5 text-center">
+        <h1 id="Mainheading" class="thickness-underline">IMAGE SCRAPPER</h1>
+        <p id="download">DOWNLOAD UPTO 100 IMAGES IN JUST ONE GO</p>
+      </div>
+    </div>
+    <form action="result.html" method="POST">
+      <div class="row">
+        <div id="col1" class="col-12 text-center">
+          <label class="mr-1">Item-Name</label>
+          <p>
+            <input name="Item-Name" type="text" placeholder="Enter the name of Item" />
+          </p>
+        </div>
+        <div id="col2" class="col-12 text-center">
+          <label class="mr-1">Item-Number</label>
+          <p>
+            <input name="Item-Number" type="number" placeholder="Enter the number of Item" />
+          </p>
+        </div>
+        <div id="col1" class="col-12 text-center">
+          <p>
+            <input type="submit" placeholder="submit" />
+          </p>
+        </div>
+      </div>
+    </form>
+    <div class="row rowoverlay">
+      <div class="col-6 text-right coloverlay">
+        <img src="/static/bottle with bubbles.svg" width="350px" />
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <script>
+      particlesJS.load("particles-js", "/static/particlesjs.json", function () {
+        console.log("callback - /static/particlesjs.json config loaded");
+      });
+    </script>
+  </body>
+</html>
+{% endblock %}

@@ -1,0 +1,59 @@
+body {
+  background-color: #EF9FAA;
+  overflow-x: hidden;
+}
+
+.background {
+  position: absolute;
+  z-index: -1;
+}
+
+#Mainheading {
+  border-radius: 0px;
+  font-family: Poppins;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0em;
+  color: #ffffff;
+}
+#particles-js {
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  height: 100%;
+  z-index: -1;
+}
+
+.thickness-underline {
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+  margin-bottom: 10px;
+}
+
+.thickness-underline-2 {
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+  margin-bottom: 10px;
+}
+
+#download {
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0em;
+  color: #ffffff;
+}
+
+.rowoverlay{
+  position: absolute;
+  top: 150px;
+  left:0;
+  z-index:-1;
+  bottom:0;
+  right:0;
+}
+
