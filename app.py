@@ -21,14 +21,14 @@ def home():
 
 @app.route('/result.html',methods=['POST','GET'])
 def display():
-        if request.method == 'POST':
-            name = request.form['Item-Name']
-            num= request.form['Item-Number']
-            nums=int(num)
-            print(type(nums))
-            search_and_download(search_term=name, driver_path=DRIVER_PATH,number_images=nums) # method to download images
-            makezip()
-            return render_template("result.html")
+    if request.method == 'POST':
+        name = request.form['Item-Name']
+        num= request.form['Item-Number']
+        nums=int(num)
+        print(type(nums))
+        search_and_download(search_term=name, driver_path=DRIVER_PATH,number_images=nums) # method to download images
+        makezip()
+        return render_template("result.html")
         
 
 if __name__ == "__main__":
