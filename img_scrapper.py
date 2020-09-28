@@ -2,7 +2,6 @@ import os
 import time
 import requests
 from selenium import webdriver
-
 import shutil
 chrome_options = webdriver.ChromeOptions()
 chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
@@ -12,7 +11,7 @@ chrome_options.add_argument("--no-sandbox")
 driver=webdriver.Chrome(executable_path = os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 glob_time=""
 
-def fetch_image_urls(query: str, max_links_to_fetch: int, wd: driver, sleep_between_interactions: int = 1):
+def fetch_image_urls(query: str, max_links_to_fetch: int, wd=driver, sleep_between_interactions: int = 1):
     def scroll_to_end(wd):
         wd.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(sleep_between_interactions)
