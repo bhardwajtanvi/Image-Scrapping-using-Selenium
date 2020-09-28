@@ -119,8 +119,8 @@ def makezip(search_term,number_images):
 
 
 
-search_term = 'flute'
+# search_term = 'flute'
 # num of images you can pass it from here  by default it's 10 if you are not passing
-number_images = 1
-search_and_download(search_term=search_term, number_images=number_images) # method to download images
+# number_images = 1
+# search_and_download(search_term=search_term, number_images=number_images) # method to download images
 # makezip(search_term=search_term,number_images=number_images)
