@@ -2,8 +2,8 @@ apipkg==1.5
 atomicwrites==1.4.0
 attrs==20.2.0
 certifi==2020.6.20
-chromedriver-install==85.0.4183.87
 chardet==3.0.4
+chromedriver-py==86.0.4240.22
 click==7.1.2
 colorama==0.4.3
 contextlib2==0.6.0.post1
