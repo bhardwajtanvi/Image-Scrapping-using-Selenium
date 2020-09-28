@@ -97,7 +97,7 @@ def search_and_download(search_term, driver_path, number_images, target_path='./
     if not os.path.exists(target_folder):
         os.makedirs(target_folder) # make directory using the target path if it doesn't exist already
 
-    with webdriver.Chrome(chrome_options=chrome_options,executable_path=driver_path) as wd:
+    with webdriver.Chrome(chrome_options=chrome_options,executable_path=os.path.abspath("chromedriver.exe")) as wd:
         res = fetch_image_urls(search_term, number_images, wd=wd, sleep_between_interactions=0.5)
 
     counter = 0
