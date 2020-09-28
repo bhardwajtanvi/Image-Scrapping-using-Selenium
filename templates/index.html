@@ -15,36 +15,54 @@
   </head>
   <body>
     <div id="particles-js"></div>
+
+    <div class="row rowoverlay2">
+      <div id="loader" class="col-12 text-center coloverlay2">
+        <img src="/static/spinner.gif" width="300" height="300" />
+        <p>Wait folks....</p>
+      </div>
+    </div>
     <div class="container">
       <div class="pt-5 text-center">
         <h1 id="Mainheading" class="thickness-underline">IMAGE SCRAPPER</h1>
         <p id="download">DOWNLOAD UPTO 100 IMAGES IN JUST ONE GO</p>
       </div>
     </div>
+
     <form action="result.html" method="POST">
       <div class="row">
         <div id="col1" class="col-12 text-center">
           <label class="mr-1">Item-Name</label>
           <p>
-            <input name="Item-Name" type="text" placeholder="Enter the name of Item" />
+            <input
+              name="Item-Name"
+              type="text"
+              placeholder="Enter the name of Item"
+            />
           </p>
         </div>
         <div id="col2" class="col-12 text-center">
           <label class="mr-1">Item-Number</label>
           <p>
-            <input name="Item-Number" type="number" placeholder="Enter the number of Item" />
+            <input
+              name="Item-Number"
+              type="number"
+              max="100"
+              placeholder="Enter the number of Item"
+            />
           </p>
         </div>
-        <div id="col1" class="col-12 text-center">
+
+        <div id="col3" class="col-12 text-center">
           <p>
-            <input type="submit" placeholder="submit" />
+            <input onclick="gif_anim()" type="submit" placeholder="submit" />
           </p>
         </div>
       </div>
     </form>
     <div class="row rowoverlay">
       <div class="col-6 text-right coloverlay">
-        <img src="/static/bottle with bubbles.svg" width="350px" />
+        <img id="botl" src="/static/bottle with bubbles.svg" width="350px" />
       </div>
     </div>
 
@@ -69,6 +87,46 @@
       particlesJS.load("particles-js", "/static/particlesjs.json", function () {
         console.log("callback - /static/particlesjs.json config loaded");
       });
+    </script>
+    <script>
+      document.getElementById("particles-js").style.opacity = "1";
+      document.getElementById("Mainheading").style.opacity = "1";
+      document.getElementById("download").style.opacity = "1";
+      document.getElementById("col1").style.opacity = "1";
+      document.getElementById("col2").style.opacity = "1";
+      document.getElementById("col3").style.opacity = "1";
+      document.getElementById("botl").style.opacity = "1";
+      var gif = document.getElementById("loader");
+      gif.style.display = "none";
+      var i = 1.1;
+      // console.log("0i",i);
+
+      function gif_anim() {
+        gif.style.display = "block";
+        document.getElementById("particles-js").style.opacity = "0";
+        document.getElementById("Mainheading").style.opacity = "0";
+        document.getElementById("download").style.opacity = "0";
+        document.getElementById("col1").style.opacity = "0";
+        document.getElementById("col2").style.opacity = "0";
+        document.getElementById("col3").style.opacity = "0";
+        document.getElementById("botl").style.opacity = "0";
+        var k = window.setInterval(function () {
+          if (i != 0.2) {
+            gif.style.opacity = i;
+            // console.log("i", i);
+            i = i - 0.1;
+            // console.log("subtrcti",i);
+            i = i.toFixed(1);
+            // console.log("formattedi",i);
+          } // clearInterval(k);
+          else {
+            gif.style.opacity = i;
+            // console.log("2i", i);
+            i=1.1;
+            // console.log("3i",i);
+          }
+        }, 100);
+      }
     </script>
   </body>
 </html>

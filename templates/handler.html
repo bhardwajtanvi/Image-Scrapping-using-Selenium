@@ -12,27 +12,14 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/static/main.css" />
-    <style>
-      body {
-        overflow: hidden;
-      }
-    </style>
   </head>
 
   <body>
+
     {%include 'index.html'%}
     <div id="particles-js"></div>
-    <div class="text-center">
-      <a
-        onclick="deletefile(`{{value}}`)"
-        href="/static/{{value}}"
-        target="blank"
-        ><button id="download_btn" class="btn btn-default">
-          Download Zip
-        </button></a
-      >
-      <!-- <a href="/img_scrapped.zip" download="/img_scrapped.zip"><button class="button">Download Zip</button></a
-      > -->
+    <div>
+        <p>O dear, we got an error: {{error}}</p>
     </div>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 
@@ -57,22 +44,6 @@
       particlesJS.load("particles-js", "/static/particlesjs.json", function () {
         console.log("callback - /static/particlesjs.json config loaded");
       });
-    </script>
-    <script>
-      function deletefile(deletefile) {
-        // console.log(deletefile);
-        // Create a request variable and assign a new XMLHttpRequest object to it.
-        var request = new XMLHttpRequest();
-
-        // Open a new connection, using the GET request on the URL endpoint
-        request.open("POST", "/delete/" + deletefile, true);
-
-        // Send request
-        request.send();
-        // window.location="/"
-
-        $("#download_btn").attr("disabled", true);
-      }
     </script>
   </body>
 </html>

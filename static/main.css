@@ -1,6 +1,6 @@
 body {
   background-color: #EF9FAA;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .background {
@@ -24,6 +24,8 @@ body {
   height: 100%;
   z-index: -1;
 }
+
+
 
 .thickness-underline {
   display: inline-block;
@@ -56,4 +58,14 @@ body {
   bottom:0;
   right:0;
 }
+
+.rowoverlay2{
+  position: absolute;
+  top: 0px;
+  left:0;
+  z-index:-1; 
+  bottom:0;
+  right:0;
+}
+
 
