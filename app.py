@@ -12,7 +12,7 @@ import shutil
 
 
 
-DRIVER_PATH = './chromedriver.exe'
+DRIVER_PATH = './chromedriver'
 
 
 app = Flask(__name__)

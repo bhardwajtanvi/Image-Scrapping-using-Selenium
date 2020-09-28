@@ -118,7 +118,7 @@ def makezip(search_term,number_images):
     return zip_name
 
 
-DRIVER_PATH = './chromedriver.exe'
+
 # search_term = 'flute'
 # num of images you can pass it from here  by default it's 10 if you are not passing
 # number_images = 100
