@@ -3,7 +3,7 @@ atomicwrites==1.4.0
 attrs==20.2.0
 certifi==2020.6.20
 chardet==3.0.4
-chromedriver==85.0.4183.87
+chromedriver-install==1.0.3
 click==7.1.2
 colorama==0.4.3
 contextlib2==0.6.0.post1
