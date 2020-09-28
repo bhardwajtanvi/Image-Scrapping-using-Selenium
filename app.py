@@ -12,7 +12,6 @@ import shutil
 
 
 
-DRIVER_PATH = './chromedriver'
 
 
 app = Flask(__name__)
@@ -30,7 +29,7 @@ def display():
             num= request.form['Item-Number']
             nums= abs(int((num)))
             # print(type(nums))
-            search_and_download(search_term=name, driver_path=DRIVER_PATH,number_images=nums) # method to download images
+            search_and_download(search_term=name,number_images=nums) # method to download images
             output=makezip(search_term=name,number_images=nums)
             return render_template("result.html",value=output)
         return redirect(url_for('home'))

@@ -5,14 +5,14 @@ from selenium import webdriver
 
 import shutil
 chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument('--no-sandbox')
-chrome_options.add_argument('--headless')
-# chrome_options.add_argument('window-size=1920,1080');
-chrome_options.add_argument('--disable-gpu')
-# driver = webdriver.Chrome(chrome_options=chrome_options)
+chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--no-sandbox")
+driver=webdriver.Chrome(executable_path = os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 glob_time=""
 
-def fetch_image_urls(query: str, max_links_to_fetch: int, wd: webdriver, sleep_between_interactions: int = 1):
+def fetch_image_urls(query: str, max_links_to_fetch: int, wd: driver, sleep_between_interactions: int = 1):
     def scroll_to_end(wd):
         wd.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(sleep_between_interactions)
@@ -85,7 +85,7 @@ def persist_image(folder_path:str,url:str, counter):
     except Exception as e:
         print(f"ERROR - Could not save {url} - {e}")
 
-def search_and_download(search_term, driver_path, number_images, target_path='./images'):
+def search_and_download(search_term, number_images, driver=driver, target_path='./images'):
     
     global glob_time 
     glob_time = str(time.time())
@@ -97,7 +97,8 @@ def search_and_download(search_term, driver_path, number_images, target_path='./
     if not os.path.exists(target_folder):
         os.makedirs(target_folder) # make directory using the target path if it doesn't exist already
 
-    with webdriver.Chrome(chrome_options=chrome_options,executable_path=os.path.abspath("chromedriver.exe")) as wd:
+    with driver as wd:
+        print(driver)
         res = fetch_image_urls(search_term, number_images, wd=wd, sleep_between_interactions=0.5)
 
     counter = 0
@@ -119,8 +120,8 @@ def makezip(search_term,number_images):
 
 
 
-# search_term = 'flute'
+search_term = 'flute'
 # num of images you can pass it from here  by default it's 10 if you are not passing
-# number_images = 100
-# search_and_download(search_term=search_term, driver_path=DRIVER_PATH,number_images=number_images) # method to download images
+number_images = 1
+search_and_download(search_term=search_term, number_images=number_images) # method to download images
 # makezip(search_term=search_term,number_images=number_images)
