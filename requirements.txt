@@ -8,6 +8,7 @@ colorama==0.4.3
 contextlib2==0.6.0.post1
 execnet==1.7.1
 Flask==1.1.2
+glob3==0.0.1
 gunicorn==20.0.4
 idna==2.10
 iniconfig==1.0.1
@@ -21,6 +22,7 @@ path==15.0.0
 path.py==12.5.0
 pluggy==0.13.1
 py==1.9.0
+pyderman==2.0.0
 pyparsing==2.4.7
 pytest==6.0.2
 pytest-shutil==1.7.0
